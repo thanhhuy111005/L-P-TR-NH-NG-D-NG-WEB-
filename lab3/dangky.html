@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thông tin thành viên</title>
+    <style>
+        body {
+            
+            background-image: url('anh.jpg');
+            background-size: cover;          
+            background-repeat: no-repeat;   
+            background-position: center;     
+            background-attachment: fixed;    
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px 0;
+        }
+
+        
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.9); 
+            width: 480px;
+            margin: 20px auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+    
+        .required {
+            color: rgb(0, 255, 13);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <form action="" method="POST" enctype="multipart/form-data">
+            <table align="center" cellpadding="6">
+                <tr>
+                    <td colspan="2" align="center">
+                        <h2>PHIẾU ĐĂNG KÝ</h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="hoten">Họ và tên:</label></td>
+                    <td>
+                        <input type="text" id="hoten" name="hoten" required> <span class="required">(*)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="diachi">Địa chỉ:</label></td>
+                    <td>
+                        <input type="text" id="diachi" name="diachi" size="28">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="email">Email:</label></td>
+                    <td>
+                        <input type="email" id="email" name="email" required> <span class="required">(*)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">Giới tính:</td>
+                    <td>
+                        <input type="radio" id="nam" name="gioitinh" value="Nam" checked>
+                        <label for="nam">Nam</label>
+                        <input type="radio" id="nu" name="gioitinh" value="Nữ">
+                        <label for="nu">Nữ</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="tuoi">Tuổi:</label></td>
+                    <td>
+                        <input type="number" id="tuoi" name="tuoi" style="width: 60px;" required> <span class="required">(*)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" valign="top">Sở thích:</td>
+                    <td>
+                        <input type="checkbox" id="thethao" name="sothich[]" value="Thể thao">
+                        <label for="thethao">Thể thao</label><br>
+                        
+                        <input type="checkbox" id="vanhoc" name="sothich[]" value="Văn học">
+                        <label for="vanhoc">Văn học</label><br>
+                        
+                        <input type="checkbox" id="cntt" name="sothich[]" value="Công nghệ thông tin">
+                        <label for="cntt">Công nghệ thông tin</label><br>
+                        
+                        <input type="checkbox" id="lichsu" name="sothich[]" value="Lịch sử">
+                        <label for="lichsu">Lịch sử</label><br>
+                        
+                        <input type="checkbox" id="game" name="sothich[]" value="Game">
+                        <label for="game">Game</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="chuyennganh">Chuyên ngành:</label></td>
+                    <td>
+                        <select id="chuyennganh" name="chuyennganh">
+                            <option value="web">Công nghệ Web</option>
+                            <option value="pm">Kỹ thuật phần mềm</option>
+                            <option value="mang">Mạng máy tính</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="hinh">Gởi hình:</label></td>
+                    <td>
+                        <input type="file" id="hinh" name="hinh">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" valign="top"><label for="yeucau">Yêu cầu:</label></td>
+                    <td>
+                        <textarea id="yeucau" name="yeucau" rows="4" cols="25"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Gởi thông tin">
+                        <input type="reset" value="Nhập lại">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BỘ MÁY NHÀ NƯỚC VIỆT NAM</title>
+    <!-- Reveal.js Core CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ================= TỔNG THỂ & MÀU SẮC ================= */
+        :root {
+            --bg-dark: #050508;
+            --bg-navy: #0d1117;
+            --red-accent: #c8102e;
+            --red-glow: rgba(200, 16, 46, 0.6);
+            --gold-accent: #d4af37;
+            --gold-glow: rgba(212, 175, 55, 0.6);
+            --text-main: #ffffff;
+            --text-muted: #aaaaaa;
+        }
+
+        body { background: radial-gradient(circle at center, var(--bg-navy) 0%, var(--bg-dark) 100%); font-family: 'Open Sans', sans-serif; }
+        .reveal { font-family: 'Open Sans', sans-serif; color: var(--text-main); }
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+            font-family: 'Montserrat', sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: 2px;
+        }
+
+        /* Text Effects */
+        .gold-text {
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900;
+        }
+        .red-text { color: var(--red-accent); text-shadow: 0 0 10px var(--red-glow); }
+        .glow-title { text-shadow: 0 0 20px rgba(255,255,255,0.3), 0 0 40px var(--gold-glow); }
+
+        /* Glassmorphism & Cards */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px;
+            padding: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .glass-panel:hover { transform: translateY(-5px); border-color: var(--gold-accent); box-shadow: 0 10px 40px var(--gold-glow); }
+        
+        .card-red { border-top: 4px solid var(--red-accent); box-shadow: 0 10px 30px var(--red-glow); }
+        .card-gold { border-top: 4px solid var(--gold-accent); box-shadow: 0 10px 30px var(--gold-glow); }
+
+        /* Layouts */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; align-items: stretch; }
+        .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; }
+        .grid-6 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .flex-col { display: flex; flex-direction: column; gap: 20px; align-items: center; }
+
+        /* Danh sách (Bullets) */
+        .reveal ul { list-style: none; padding: 0; margin: 0; text-align: left; }
+        .reveal ul li { position: relative; padding-left: 30px; margin-bottom: 15px; font-size: 0.9em; line-height: 1.4; }
+        .reveal ul li::before {
+            content: '♦'; position: absolute; left: 0; color: var(--gold-accent); font-size: 1.2em; text-shadow: 0 0 5px var(--gold-glow);
+        }
+
+        /* Hình ảnh & Portrait */
+        .portrait-img {
+            width: 100%; max-width: 350px; border-radius: 10px; border: 2px solid rgba(255,255,255,0.2);
+            box-shadow: 0 0 30px rgba(0,0,0,0.8), 0 0 20px var(--gold-glow); object-fit: cover;
+        }
+        .bg-dim {
+            position: absolute; top:0; left:0; width:100%; height:100%; z-index: -1;
+            background-size: cover; background-position: center; opacity: 0.15; filter: blur(3px);
+        }
+        
+        /* Timeline */
+        .timeline-container { display: flex; justify-content: space-between; align-items: center; position: relative; margin-top: 40px; }
+        .timeline-line { position: absolute; top: 40%; left: 10%; right: 10%; height: 4px; background: linear-gradient(90deg, transparent, var(--red-accent), transparent); z-index: 0; box-shadow: 0 0 15px var(--red-glow); }
+        .timeline-node { z-index: 1; background: var(--bg-navy); border: 2px solid var(--gold-accent); border-radius: 10px; padding: 15px; width: 28%; text-align: center; }
+        
+        /* Quiz */
+        .quiz-card { background: #111; border: 1px solid #333; border-radius: 8px; padding: 15px; text-align: center; cursor: pointer; }
+        
+        /* Chỉnh size chữ chung cho nội dung */
+        p, .subtitle { font-size: 0.9em; line-height: 1.5; margin: 10px 0; }
+        .subtitle { color: var(--gold-accent); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .slide-number-custom { position: absolute; bottom: 20px; right: 20px; font-size: 0.5em; color: rgba(255,255,255,0.5); font-family: 'Montserrat'; }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- SLIDE 1: COVER -->
+            <section data-transition="zoom">
+                <div class="bg-dim" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/1920px-Flag_of_Vietnam.svg.png'); opacity: 0.2;"></div>
+                <h1 class="glow-title" style="font-size: 3em; margin-bottom: 0;">BỘ MÁY NHÀ NƯỚC <br> <span class="gold-text">VIỆT NAM</span></h1>
+                <hr style="width: 50%; border-color: var(--red-accent); box-shadow: 0 0 10px var(--red-glow); margin: 30px auto;">
+                <h3 style="font-size: 1.2em; text-transform: none; font-weight: 400;">Các cơ quan nhà nước ở Trung ương và địa phương<br>Chức năng – nhiệm vụ – người đứng đầu</h3>
+                <div style="margin-top: 60px; font-size: 0.7em; color: var(--text-muted);">
+                    <p>Họ tên: [Tên của bạn] | MSSV: [MSSV] | Lớp: [Lớp]</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 2: KHÁI NIỆM -->
+            <section data-transition="fade">
+                <h2>Khái niệm <span class="gold-text">Bộ máy Nhà nước</span></h2>
+                <div class="flex-col" style="margin-top: 40px; width: 60%; margin-left: auto; margin-right: auto;">
+                    <div class="glass-panel fragment fade-up card-gold" style="width: 100%;">
+                        <h3>TRUNG ƯƠNG</h3>
+                        <p style="font-size: 0.8em; margin:0;">Chỉ đạo, điều hành và quản lý vĩ mô</p>
+                    </div>
+                    <div class="fragment fade-down" style="color: var(--red-accent); font-size: 2em;">↓</div>
+                    <div class="glass-panel fragment fade-up" style="width: 100%;">
+                        <h3>ĐỊA PHƯƠNG</h3>
+                        <p style="font-size: 0.8em; margin:0;">Tổ chức thực hiện và quản lý địa bàn</p>
+                    </div>
+                    <div class="fragment fade-down" style="color: var(--red-accent); font-size: 2em;">↓</div>
+                    <div class="glass-panel fragment fade-up card-red" style="width: 100%;">
+                        <h3>NGƯỜI DÂN</h3>
+                        <p style="font-size: 0.8em; margin:0;">Bảo vệ quyền lợi, duy trì trật tự an toàn xã hội</p>
+                    </div>
+                </div>
+                <p class="fragment fade-in" style="margin-top:30px; font-size:0.8em;">Hệ thống các cơ quan nhà nước được tổ chức và hoạt động theo quy định của pháp luật để thực hiện các chức năng, nhiệm vụ của Nhà nước.</p>
+            </section>
+
+            <!-- SLIDE 3: SƠ ĐỒ TỔNG QUÁT -->
+            <section data-transition="slide">
+                <h2 class="gold-text">Cấu trúc bộ máy nhà nước</h2>
+                <div style="display: flex; justify-content: center; align-items: center; margin-top: 40px; position: relative;">
+                    <!-- Sơ đồ trung tâm -->
+                    <div class="glass-panel fragment zoom-in" style="border: 2px solid var(--gold-accent); z-index: 2; background: #111;">
+                        <h3 style="margin:0; color: var(--red-accent);">BỘ MÁY NHÀ NƯỚC</h3>
+                    </div>
+                    
+                    <!-- Nhánh trái -->
+                    <div class="glass-panel fragment slide-in-left card-gold" style="position: absolute; left: 0; width: 35%;">
+                        <h4 class="gold-text">TRUNG ƯƠNG</h4>
+                        <ul>
+                            <li>Quốc hội</li>
+                            <li>Chủ tịch nước</li>
+                            <li>Chính phủ</li>
+                            <li>TAND tối cao</li>
+                            <li>VKSND tối cao</li>
+                        </ul>
+                    </div>
+
+                    <!-- Nhánh phải -->
+                    <div class="glass-panel fragment slide-in-right card-red" style="position: absolute; right: 0; width: 35%;">
+                        <h4 class="red-text">ĐỊA PHƯƠNG</h4>
+                        <ul>
+                            <li>HĐND các cấp</li>
+                            <li>UBND các cấp</li>
+                            <li>TAND cấp tỉnh/huyện</li>
+                            <li>VKSND cấp tỉnh/huyện</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= PHẦN I: TRUNG ƯƠNG ================= -->
+            
+            <!-- SLIDE 4: QUỐC HỘI -->
+            <section data-transition="convex">
+                <div class="bg-dim" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/4b/National_Assembly_House%2C_Hanoi.jpg');"></div>
+                <div class="grid-2">
+                    <div style="text-align: left;">
+                        <h2 class="gold-text">QUỐC HỘI</h2>
+                        <p class="subtitle red-text">Cơ quan quyền lực nhà nước cao nhất</p>
+                        <div class="glass-panel fragment fade-right">
+                            <ul>
+                                <li>Cơ quan đại biểu cao nhất của Nhân dân.</li>
+                                <li>Thực hiện quyền <strong>lập hiến, lập pháp</strong>.</li>
+                                <li>Quyết định những vấn đề quan trọng của đất nước.</li>
+                                <li>Giám sát tối cao hoạt động của Nhà nước.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="fragment fade-left" style="text-align: center;">
+                        <!-- Ảnh Trần Thanh Mẫn -->
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Tran_Thanh_Man.jpg" class="portrait-img" alt="Trần Thanh Mẫn">
+                        <h3 class="gold-text" style="margin-top: 15px;">TRẦN THANH MẪN</h3>
+                        <p class="subtitle" style="color: white;">Chủ tịch Quốc hội</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 5: QUỐC HỘI NHIỆM VỤ -->
+            <section data-transition="fade">
+                <h2>QUỐC HỘI – <span class="gold-text">NHIỆM VỤ TRỌNG TÂM</span></h2>
+                <div class="grid-6" style="margin-top: 40px;">
+                    <div class="glass-panel fragment zoom-in"><h1 style="margin:0;">📜</h1><p style="font-size:0.7em; font-weight:bold;">Làm và sửa đổi Hiến pháp, luật</p></div>
+                    <div class="glass-panel fragment zoom-in"><h1 style="margin:0;">🏛️</h1><p style="font-size:0.7em; font-weight:bold;">Bầu, miễn nhiệm lãnh đạo cấp cao</p></div>
+                    <div class="glass-panel fragment zoom-in"><h1 style="margin:0;">📈</h1><p style="font-size:0.7em; font-weight:bold;">Quyết định mục tiêu kinh tế - xã hội</p></div>
+                    <div class="glass-panel fragment zoom-in"><h1 style="margin:0;">💰</h1><p style="font-size:0.7em; font-weight:bold;">Quyết định ngân sách quốc gia</p></div>
+                    <div class="glass-panel fragment zoom-in"><h1 style="margin:0;">🛡️</h1><p style="font-size:0.7em; font-weight:bold;">Vấn đề chiến tranh & hòa bình</p></div>
+                    <div class="glass-panel fragment zoom-in"><h1 style="margin:0;">🔎</h1><p style="font-size:0.7em; font-weight:bold;">Giám sát Chính phủ, Tòa án, VKS</p></div>
+                </div>
+            </section>
+
+            <!-- SLIDE 6: CHỦ TỊCH NƯỚC -->
+            <section data-transition="zoom">
+                <div class="bg-dim" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/1920px-Flag_of_Vietnam.svg.png'); opacity:0.15; filter: blur(10px);"></div>
+                <div class="grid-2">
+                    <div class="fragment fade-right" style="text-align: center;">
+                        <!-- Ảnh Lương Cường -->
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Dai_tuong_Luong_Cuong.jpg" class="portrait-img card-red" style="max-width: 400px; box-shadow: 0 0 50px var(--red-glow);" alt="Lương Cường">
+                    </div>
+                    <div style="text-align: left;">
+                        <h1 class="glow-title" style="font-size: 3em; margin-bottom: 0;">CHỦ TỊCH NƯỚC</h1>
+                        <h3 class="red-text" style="letter-spacing: 5px;">NGUYÊN THỦ QUỐC GIA</h3>
+                        
+                        <div class="glass-panel card-gold fragment fade-up" style="margin-top: 20px;">
+                            <h3 class="gold-text" style="margin-bottom: 5px;">LƯƠNG CƯỜNG</h3>
+                            <p class="subtitle" style="color: white; margin-top:0;">CHỦ TỊCH NƯỚC CHXHCN VIỆT NAM</p>
+                            <hr style="border-color: rgba(255,255,255,0.2);">
+                            <ul>
+                                <li>Người đứng đầu Nhà nước.</li>
+                                <li>Đại diện đối nội và đối ngoại.</li>
+                                <li>Thống lĩnh lực lượng vũ trang nhân dân.</li>
+                                <li>Do Quốc hội bầu trong số đại biểu Quốc hội.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 7: TIMELINE CHỦ TỊCH NƯỚC -->
+            <section data-transition="slide">
+                <h2>CÁC CHỦ TỊCH NƯỚC <span class="gold-text">GẦN ĐÂY</span></h2>
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+                    
+                    <div class="timeline-node fragment fade-up">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Vo_Van_Thuong_2023.jpg" style="width:100px; height:120px; object-fit:cover; border-radius:10px;">
+                        <h4 style="margin-top: 10px; font-size:1em;">Võ Văn Thưởng</h4>
+                        <p class="gold-text" style="font-size: 0.8em; margin:0;">03/2023 → 03/2024</p>
+                    </div>
+
+                    <div class="timeline-node fragment fade-up" style="animation-delay: 0.2s;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/To_Lam_2024.jpg" style="width:100px; height:120px; object-fit:cover; border-radius:10px;">
+                        <h4 style="margin-top: 10px; font-size:1em;">Tô Lâm</h4>
+                        <p class="gold-text" style="font-size: 0.8em; margin:0;">05/2024 → 10/2024</p>
+                    </div>
+
+                    <div class="timeline-node fragment fade-up card-red" style="transform: scale(1.1); animation-delay: 0.4s;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Dai_tuong_Luong_Cuong.jpg" style="width:100px; height:120px; object-fit:cover; border-radius:10px;">
+                        <h4 class="gold-text" style="margin-top: 10px; font-size:1em;">Lương Cường</h4>
+                        <p class="gold-text" style="font-size: 0.8em; margin:0;">10/2024 → nay</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 8: CTN CHỨC NĂNG VÀ NHIỆM VỤ -->
+            <section data-transition="fade">
+                <h2>CHỦ TỊCH NƯỚC: <span class="gold-text">CHỨC NĂNG & NHIỆM VỤ</span></h2>
+                <div class="grid-2" style="margin-top: 30px; align-items: start;">
+                    <div class="glass-panel card-red fragment fade-right">
+                        <h3 class="red-text" style="text-align: center;">CHỨC NĂNG</h3>
+                        <ul>
+                            <li class="fragment">Nguyên thủ quốc gia.</li>
+                            <li class="fragment">Đại diện đối nội, đối ngoại.</li>
+                            <li class="fragment">Thống lĩnh lực lượng vũ trang nhân dân.</li>
+                            <li class="fragment">Chủ tịch Hội đồng Quốc phòng và An ninh.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="glass-panel card-gold fragment fade-left">
+                        <h3 class="gold-text" style="text-align: center;">NHIỆM VỤ</h3>
+                        <ul>
+                            <li class="fragment">Công bố Hiến pháp, luật, pháp lệnh.</li>
+                            <li class="fragment">Đề nghị Quốc hội bầu/miễn nhiệm chức danh.</li>
+                            <li class="fragment">Tiếp nhận, cử, triệu hồi đại sứ.</li>
+                            <li class="fragment">Quyết định đặc xá.</li>
+                            <li class="fragment">Quyết định huân/huy chương, quân hàm.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 9: CHÍNH PHỦ -->
+            <section data-transition="convex">
+                <div class="grid-2">
+                    <div style="text-align: left;">
+                        <h2 class="gold-text">CHÍNH PHỦ</h2>
+                        <p class="subtitle red-text">CƠ QUAN HÀNH CHÍNH NHÀ NƯỚC CAO NHẤT</p>
+                        <div class="glass-panel fragment fade-right">
+                            <ul>
+                                <li>Thực hiện <strong>quyền hành pháp</strong>.</li>
+                                <li>Là cơ quan chấp hành của Quốc hội.</li>
+                                <li>Thống nhất quản lý đất nước.</li>
+                                <li>Quản lý kinh tế, văn hóa, xã hội, QPAN, đối ngoại.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="fragment fade-left" style="text-align: center;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Le_Minh_Hung.jpg" class="portrait-img card-gold" alt="Lê Minh Hưng">
+                        <h3 class="gold-text" style="margin-top: 15px;">LÊ MINH HƯNG</h3>
+                        <p class="subtitle" style="color: white;">Thủ tướng Chính phủ (Bổ sung/Thay đổi theo tình hình thực tế)*</p>
+                        <p style="font-size: 0.4em; color: gray;">*Theo dữ liệu yêu cầu từ hệ thống sinh mã</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 10: CHÍNH PHỦ NHIỆM VỤ -->
+            <section data-transition="zoom">
+                <h2>NHIỆM VỤ <span class="gold-text">CHÍNH PHỦ</span></h2>
+                <div class="grid-6" style="margin-top: 40px;">
+                    <div class="glass-panel fragment fade-in">⚙️<br><b>Thi hành pháp luật</b></div>
+                    <div class="glass-panel fragment fade-in">📈<br><b>Kinh tế – xã hội</b></div>
+                    <div class="glass-panel fragment fade-in">🏥<br><b>Giáo dục – y tế</b></div>
+                    <div class="glass-panel fragment fade-in">🌲<br><b>Tài nguyên – môi trường</b></div>
+                    <div class="glass-panel fragment fade-in">🛡️<br><b>Quốc phòng – an ninh</b></div>
+                    <div class="glass-panel fragment fade-in">🤝<br><b>Đối ngoại</b></div>
+                    <div class="glass-panel fragment fade-in" style="grid-column: 1 / 3;">⚖️<br><b>Luật – ngân sách</b></div>
+                    <div class="glass-panel fragment fade-in">🏢<br><b>Chỉ đạo Bộ, ngành & UBND</b></div>
+                </div>
+            </section>
+
+            <!-- SLIDE 11: TAND TỐI CAO -->
+            <section data-transition="slide">
+                <div class="bg-dim" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/23/Supreme_People%27s_Court_of_Vietnam.jpg');"></div>
+                <div class="grid-2">
+                    <div class="fragment fade-right" style="text-align: center;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Le_Minh_Tri_-_Vien_truong_VKSNDTC.jpg" class="portrait-img card-red" alt="Lê Minh Trí">
+                        <h3 class="gold-text" style="margin-top: 15px;">LÊ MINH TRÍ</h3>
+                        <p class="subtitle" style="color: white;">Chánh án TAND tối cao</p>
+                    </div>
+                    <div style="text-align: left;">
+                        <h2 class="gold-text">TÒA ÁN NHÂN DÂN <br>TỐI CAO ⚖️</h2>
+                        <div class="glass-panel fragment fade-left">
+                            <ul>
+                                <li>Cơ quan <strong>xét xử</strong> cao nhất.</li>
+                                <li>Thực hiện <strong>quyền tư pháp</strong>.</li>
+                                <li>Bảo vệ công lý, quyền con người, quyền công dân.</li>
+                                <li>Giám đốc thẩm, tái thẩm.</li>
+                                <li>Tổng kết thực tiễn xét xử và ban hành án lệ.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 12: VKSND TỐI CAO -->
+            <section data-transition="slide">
+                <div class="bg-dim" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/58/Supreme_People%27s_Procuracy_of_Vietnam.jpg');"></div>
+                <div class="grid-2">
+                    <div style="text-align: left;">
+                        <h2 class="gold-text">VIỆN KIỂM SÁT NHÂN DÂN TỐI CAO 🔍</h2>
+                        <div class="glass-panel fragment fade-right">
+                            <ul>
+                                <li>Thực hành <strong>quyền công tố</strong>.</li>
+                                <li>Kiểm sát hoạt động tư pháp.</li>
+                                <li>Kiểm sát việc tuân thủ pháp luật.</li>
+                                <li>Bảo đảm pháp luật được chấp hành nghiêm chỉnh.</li>
+                                <li><span class="red-text">Không làm oan người vô tội, không bỏ lọt tội phạm.</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="fragment fade-left" style="text-align: center;">
+                        <!-- Ảnh mô phỏng do không có sẵn URL Wikimedia trực tiếp, dùng placeholder sang trọng -->
+                        <div style="width:300px; height:400px; background:linear-gradient(45deg, #111, #333); margin:auto; border-radius:10px; border: 2px solid var(--gold-accent); display:flex; align-items:center; justify-content:center;">
+                            <h1 style="color:rgba(255,255,255,0.1);">VKSND</h1>
+                        </div>
+                        <h3 class="gold-text" style="margin-top: 15px;">NGUYỄN HUY TIẾN</h3>
+                        <p class="subtitle" style="color: white;">Viện trưởng VKSND tối cao</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= PHẦN II: ĐỊA PHƯƠNG ================= -->
+            
+            <!-- SLIDE 13: HỆ THỐNG ĐỊA PHƯƠNG -->
+            <section data-transition="convex">
+                <h2 class="gold-text">HỆ THỐNG CHÍNH QUYỀN ĐỊA PHƯƠNG</h2>
+                <div class="grid-2" style="margin-top:40px;">
+                    <div class="flex-col fragment fade-up">
+                        <div class="glass-panel card-gold" style="width:100%; text-align:center;">
+                            <h3>CẤP TỈNH</h3>
+                            <p style="font-size:0.7em;">HĐND Cấp Tỉnh | UBND Cấp Tỉnh</p>
+                        </div>
+                        <div class="red-text">↓</div>
+                        <div class="glass-panel" style="width:100%; text-align:center;">
+                            <h3>CẤP HUYỆN</h3>
+                            <p style="font-size:0.7em;">HĐND Cấp Huyện | UBND Cấp Huyện</p>
+                        </div>
+                        <div class="red-text">↓</div>
+                        <div class="glass-panel card-red" style="width:100%; text-align:center;">
+                            <h3>CẤP XÃ</h3>
+                            <p style="font-size:0.7em;">HĐND Cấp Xã | UBND Cấp Xã</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel fragment fade-left" style="border:1px dashed var(--gold-accent);">
+                        <h4 class="gold-text">CƠ QUAN TƯ PHÁP ĐỊA PHƯƠNG</h4>
+                        <hr style="border-color: rgba(255,255,255,0.2);">
+                        <ul style="font-size:0.8em;">
+                            <li>TAND cấp tỉnh / TAND khu vực (huyện)</li>
+                            <li>VKSND cấp tỉnh / VKSND khu vực (huyện)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 14: HĐND CẤP TỈNH -->
+            <section data-transition="fade">
+                <h2>HỘI ĐỒNG NHÂN DÂN <span class="gold-text">CẤP TỈNH</span></h2>
+                <div class="glass-panel fragment zoom-in" style="margin-top: 30px; text-align: left;">
+                    <ul>
+                        <li>Cơ quan quyền lực nhà nước ở địa phương.</li>
+                        <li>Do cử tri địa phương bầu ra.</li>
+                        <li>Quyết định các vấn đề quan trọng của tỉnh.</li>
+                        <li>Giám sát hoạt động của bộ máy nhà nước địa phương.</li>
+                    </ul>
+                    <hr style="margin:20px 0; border-color: rgba(212, 175, 55, 0.3);">
+                    <div style="display:flex; align-items:center; gap:20px;">
+                        <h1 style="margin:0;">👤</h1>
+                        <div>
+                            <p style="margin:0; font-size:0.8em; color:var(--text-muted);">Người đứng đầu:</p>
+                            <h3 class="gold-text" style="margin:0;">CHỦ TỊCH HĐND CẤP TỈNH</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 15: UBND CẤP TỈNH -->
+            <section data-transition="fade">
+                <h2>ỦY BAN NHÂN DÂN <span class="red-text">CẤP TỈNH</span></h2>
+                <div class="glass-panel fragment zoom-in card-red" style="margin-top: 30px; text-align: left;">
+                    <ul>
+                        <li>Cơ quan <strong>chấp hành</strong> của HĐND cùng cấp.</li>
+                        <li>Cơ quan hành chính nhà nước ở địa phương.</li>
+                        <li>Tổ chức thi hành pháp luật trên địa bàn.</li>
+                        <li>Quản lý hành chính, kinh tế, xã hội của tỉnh.</li>
+                    </ul>
+                    <hr style="margin:20px 0; border-color: rgba(200, 16, 46, 0.3);">
+                    <div style="display:flex; align-items:center; gap:20px;">
+                        <h1 style="margin:0;">🏢</h1>
+                        <div>
+                            <p style="margin:0; font-size:0.8em; color:var(--text-muted);">Người đứng đầu:</p>
+                            <h3 class="red-text" style="margin:0;">CHỦ TỊCH UBND CẤP TỈNH</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 16: HĐND CẤP XÃ -->
+            <section data-transition="slide">
+                <h2>HỘI ĐỒNG NHÂN DÂN <span class="gold-text">CẤP XÃ</span></h2>
+                <div class="grid-2">
+                    <div class="glass-panel fragment fade-right" style="text-align:left;">
+                        <ul>
+                            <li>Cơ quan quyền lực nhà nước cơ sở.</li>
+                            <li>Đại diện ý chí, nguyện vọng của nhân dân.</li>
+                            <li>Quyết định vấn đề thuộc thẩm quyền.</li>
+                            <li>Giám sát UBND và Chủ tịch UBND cấp xã.</li>
+                        </ul>
+                    </div>
+                    <div class="glass-panel card-gold fragment fade-left" style="display:flex; flex-direction:column; justify-content:center;">
+                        <p style="color:var(--text-muted); font-size:0.8em;">Người đứng đầu:</p>
+                        <h4 class="gold-text">CHỦ TỊCH HĐND CẤP XÃ</h4>
+                        <div style="margin-top:20px; font-size:1.5em;">🏛️ ↔️ 👥</div>
+                        <p style="font-size:0.6em; margin-top:10px;">Đại diện -> Quyết định -> Giám sát</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 17: UBND CẤP XÃ -->
+            <section data-transition="slide">
+                <h2>ỦY BAN NHÂN DÂN <span class="red-text">CẤP XÃ</span></h2>
+                <div class="glass-panel fragment fade-up" style="text-align: left;">
+                    <ul>
+                        <li>Trực tiếp giải quyết nhiều thủ tục hành chính cho người dân.</li>
+                        <li>Quản lý đất đai, xây dựng, môi trường cơ sở.</li>
+                        <li>Đảm bảo giáo dục, y tế, văn hóa, an sinh xã hội.</li>
+                        <li>Giữ gìn quốc phòng, an ninh, trật tự xã hội.</li>
+                    </ul>
+                </div>
+                <!-- Infographic Chính quyền gần dân -->
+                <div class="fragment fade-up" style="margin-top:20px; display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.05); padding:15px; border-radius:10px;">
+                    <div style="text-align:center;"><h2 style="margin:0;">👥</h2><p style="font-size:0.7em; margin:0;">NGƯỜI DÂN</p></div>
+                    <div class="gold-text">➡️ THỦ TỤC HÀNH CHÍNH ➡️</div>
+                    <div style="text-align:center;"><h2 style="margin:0;">🏢</h2><p style="font-size:0.7em; margin:0; color:var(--red-accent); font-weight:bold;">UBND CẤP XÃ</p></div>
+                </div>
+            </section>
+
+            <!-- SLIDE 18: MỐI QUAN HỆ -->
+            <section data-transition="zoom">
+                <h2>MỐI QUAN HỆ <br><span class="gold-text">HĐND & UBND</span> CÙNG CẤP</h2>
+                <div class="grid-2" style="margin-top:40px;">
+                    <div class="glass-panel card-gold fragment fade-right">
+                        <h2 class="gold-text">HĐND</h2>
+                        <hr style="border-color: rgba(212,175,55,0.2);">
+                        <p style="font-weight:bold;">Quyết định & Giám sát</p>
+                    </div>
+                    <div class="glass-panel card-red fragment fade-left">
+                        <h2 class="red-text">UBND</h2>
+                        <hr style="border-color: rgba(200,16,46,0.2);">
+                        <p style="font-weight:bold;">Chấp hành & Quản lý</p>
+                    </div>
+                </div>
+                <!-- Mũi tên tương tác -->
+                <div class="fragment fade-up" style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); font-size:2em; text-shadow:0 0 20px #fff;">
+                    ↔️
+                </div>
+                <p class="fragment fade-in" style="margin-top:30px; font-style:italic; color:var(--gold-accent);">"Cơ quan chấp hành chịu sự giám sát của cơ quan quyền lực cùng cấp"</p>
+            </section>
+
+            <!-- SLIDE 19: TAND ĐỊA PHƯƠNG -->
+            <section data-transition="convex">
+                <h2>TÒA ÁN NHÂN DÂN <span class="gold-text">Ở ĐỊA PHƯƠNG</span> ⚖️</h2>
+                <div class="grid-2" style="margin-top:30px;">
+                    <div class="glass-panel card-gold fragment slide-in-left">
+                        <h3>TAND CẤP TỈNH</h3>
+                        <hr style="border:none; border-top:1px solid #333;">
+                        <h3>TAND KHU VỰC</h3>
+                    </div>
+                    <div class="glass-panel fragment slide-in-right" style="text-align:left;">
+                        <ul>
+                            <li>Xét xử các vụ án, vụ việc.</li>
+                            <li><span class="gold-text">Hình sự - Dân sự - Hành chính.</span></li>
+                            <li>Bảo vệ công lý.</li>
+                            <li>Bảo vệ quyền con người và quyền công dân.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 20: VKSND ĐỊA PHƯƠNG -->
+            <section data-transition="convex">
+                <h2>VIỆN KIỂM SÁT NHÂN DÂN <span class="red-text">Ở ĐỊA PHƯƠNG</span></h2>
+                <div class="grid-2" style="margin-top:30px;">
+                    <div class="glass-panel card-red fragment slide-in-left">
+                        <h3>VKSND CẤP TỈNH</h3>
+                        <hr style="border:none; border-top:1px solid #333;">
+                        <h3>VKSND KHU VỰC</h3>
+                    </div>
+                    <div class="glass-panel fragment slide-in-right" style="text-align:left;">
+                        <ul>
+                            <li>Thực hành <strong>quyền công tố</strong>.</li>
+                            <li>Kiểm sát hoạt động tư pháp.</li>
+                            <li>Kiểm sát việc tuân theo pháp luật.</li>
+                            <li>Bảo đảm pháp luật được chấp hành thống nhất.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= PHẦN III: TỔNG HỢP ================= -->
+
+            <!-- SLIDE 21: 5 CƠ QUAN TRUNG ƯƠNG -->
+            <section data-transition="zoom">
+                <h2>5 CƠ QUAN TRUNG ƯƠNG <br><span class="gold-text">5 VAI TRÒ CHỦ CHỐT</span></h2>
+                <div class="grid-5" style="margin-top:30px;">
+                    <div class="glass-panel fragment fade-up" style="padding:15px;">
+                        <h1 style="margin:0; font-size:1.5em;">🏛️</h1>
+                        <p style="font-size:0.6em; font-weight:bold; color:var(--gold-accent);">TRẦN THANH MẪN</p>
+                        <p style="font-size:0.5em; margin:0;">Chủ tịch Quốc hội</p>
+                    </div>
+                    <div class="glass-panel card-red fragment fade-up" style="padding:15px; animation-delay:0.1s; transform: scale(1.05);">
+                        <h1 style="margin:0; font-size:1.5em;">🇻🇳</h1>
+                        <p style="font-size:0.6em; font-weight:bold; color:var(--gold-accent);">LƯƠNG CƯỜNG</p>
+                        <p style="font-size:0.5em; margin:0;">Chủ tịch nước</p>
+                    </div>
+                    <div class="glass-panel fragment fade-up" style="padding:15px; animation-delay:0.2s;">
+                        <h1 style="margin:0; font-size:1.5em;">⚙️</h1>
+                        <p style="font-size:0.6em; font-weight:bold; color:var(--gold-accent);">LÊ MINH HƯNG</p>
+                        <p style="font-size:0.5em; margin:0;">Thủ tướng Chính phủ</p>
+                    </div>
+                    <div class="glass-panel fragment fade-up" style="padding:15px; animation-delay:0.3s;">
+                        <h1 style="margin:0; font-size:1.5em;">⚖️</h1>
+                        <p style="font-size:0.6em; font-weight:bold; color:var(--gold-accent);">LÊ MINH TRÍ</p>
+                        <p style="font-size:0.5em; margin:0;">Chánh án TAND tối cao</p>
+                    </div>
+                    <div class="glass-panel fragment fade-up" style="padding:15px; animation-delay:0.4s;">
+                        <h1 style="margin:0; font-size:1.5em;">🔍</h1>
+                        <p style="font-size:0.6em; font-weight:bold; color:var(--gold-accent);">NGUYỄN HUY TIẾN</p>
+                        <p style="font-size:0.5em; margin:0;">Viện trưởng VKSND tối cao</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 22: QUIZ -->
+            <section data-transition="slide">
+                <h2 class="glow-title">AI ĐỨNG ĐẦU CƠ QUAN NÀO?</h2>
+                <p class="subtitle">Click mũi tên để xem đáp án</p>
+                <div class="grid-2" style="margin-top:20px;">
+                    <div class="quiz-card glass-panel fragment step-fade-in-then-semi-out">LƯƠNG CƯỜNG <br><span class="fragment gold-text">➡️ Chủ tịch nước</span></div>
+                    <div class="quiz-card glass-panel fragment step-fade-in-then-semi-out">TRẦN THANH MẪN <br><span class="fragment gold-text">➡️ Chủ tịch Quốc hội</span></div>
+                    <div class="quiz-card glass-panel fragment step-fade-in-then-semi-out">LÊ MINH HƯNG <br><span class="fragment gold-text">➡️ Thủ tướng Chính phủ</span></div>
+                    <div class="quiz-card glass-panel fragment step-fade-in-then-semi-out">LÊ MINH TRÍ <br><span class="fragment gold-text">➡️ Chánh án TAND tối cao</span></div>
+                    <div class="quiz-card glass-panel fragment step-fade-in-then-semi-out" style="grid-column: 1 / 3;">NGUYỄN HUY TIẾN <br><span class="fragment gold-text">➡️ Viện trưởng VKSND tối cao</span></div>
+                </div>
+            </section>
+
+            <!-- SLIDE 23: CHỨC NĂNG CHUNG -->
+            <section data-transition="zoom">
+                <h2>CHỨC NĂNG CHUNG <br><span class="gold-text">CỦA BỘ MÁY NHÀ NƯỚC</span></h2>
+                <div style="display:flex; justify-content:center; gap:15px; flex-wrap:wrap; margin-top:40px;">
+                    <div class="glass-panel fragment zoom-in" style="border-radius:50%; width:120px; height:120px; display:flex; align-items:center; justify-content:center; text-align:center;">
+                        <p style="font-size:0.7em; margin:0; font-weight:bold;">Kinh tế</p>
+                    </div>
+                    <div class="glass-panel fragment zoom-in card-gold" style="border-radius:50%; width:120px; height:120px; display:flex; align-items:center; justify-content:center; text-align:center; animation-delay:0.1s;">
+                        <p style="font-size:0.7em; margin:0; font-weight:bold;">Văn hóa<br>Xã hội</p>
+                    </div>
+                    <div class="glass-panel fragment zoom-in" style="border-radius:50%; width:120px; height:120px; display:flex; align-items:center; justify-content:center; text-align:center; animation-delay:0.2s;">
+                        <p style="font-size:0.7em; margin:0; font-weight:bold;">Giáo dục<br>Y tế</p>
+                    </div>
+                    <div class="glass-panel fragment zoom-in card-red" style="border-radius:50%; width:120px; height:120px; display:flex; align-items:center; justify-content:center; text-align:center; animation-delay:0.3s;">
+                        <p style="font-size:0.7em; margin:0; font-weight:bold;">An ninh<br>Trật tự</p>
+                    </div>
+                    <div class="glass-panel fragment zoom-in" style="border-radius:50%; width:120px; height:120px; display:flex; align-items:center; justify-content:center; text-align:center; animation-delay:0.4s;">
+                        <p style="font-size:0.7em; margin:0; font-weight:bold;">Chủ quyền<br>Quốc gia</p>
+                    </div>
+                    <div class="glass-panel fragment zoom-in" style="border-radius:50%; width:120px; height:120px; display:flex; align-items:center; justify-content:center; text-align:center; animation-delay:0.5s;">
+                        <p style="font-size:0.7em; margin:0; font-weight:bold;">Hợp tác<br>Quốc tế</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 24: NHIỆM VỤ CHUNG -->
+            <section data-transition="fade">
+                <h2>NHIỆM VỤ <span class="gold-text">CHUNG</span></h2>
+                <div class="grid-2" style="margin-top:30px;">
+                    <div class="glass-panel fragment slide-in-left">
+                        <h1 class="gold-text" style="margin:0; font-size:2em;">01</h1>
+                        <h4 style="margin-top:10px;">THỂ CHẾ HÓA</h4>
+                        <p style="font-size:0.7em;">Xây dựng và hoàn thiện hệ thống pháp luật.</p>
+                    </div>
+                    <div class="glass-panel fragment slide-in-right card-gold">
+                        <h1 class="gold-text" style="margin:0; font-size:2em;">02</h1>
+                        <h4 style="margin-top:10px;">KIẾN TẠO & PHÁT TRIỂN</h4>
+                        <p style="font-size:0.7em;">Thúc đẩy kinh tế, nâng cao đời sống nhân dân.</p>
+                    </div>
+                    <div class="glass-panel fragment slide-in-left card-red">
+                        <h1 class="red-text" style="margin:0; font-size:2em;">03</h1>
+                        <h4 style="margin-top:10px;">BẢO VỆ CÔNG LÝ</h4>
+                        <p style="font-size:0.7em;">Bảo vệ quyền con người, quyền công dân.</p>
+                    </div>
+                    <div class="glass-panel fragment slide-in-right">
+                        <h1 class="red-text" style="margin:0; font-size:2em;">04</h1>
+                        <h4 style="margin-top:10px;">GIỮ GÌN KỶ CƯƠNG</h4>
+                        <p style="font-size:0.7em;">Đảm bảo trật tự an toàn xã hội.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 25: KẾT LUẬN -->
+            <section data-transition="zoom">
+                <div class="bg-dim" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/1920px-Flag_of_Vietnam.svg.png'); opacity: 0.15;"></div>
+                <h1 class="glow-title" style="font-size: 2.5em; margin-bottom: 20px;">BỘ MÁY NHÀ NƯỚC <span class="gold-text">VIỆT NAM</span></h1>
+                
+                <div class="glass-panel fragment zoom-in card-gold" style="display:inline-block; margin-bottom: 30px;">
+                    <h3 style="margin:0; font-size:1em;">TRUNG ƯƠNG</h3>
+                    <p style="font-size:0.7em; margin:5px 0 0 0;">Quốc hội | Chủ tịch nước | Chính phủ | TANDTC | VKSNDTC</p>
+                    <div class="red-text" style="margin:10px 0;">↕️</div>
+                    <h3 style="margin:0; font-size:1em;">ĐỊA PHƯƠNG</h3>
+                    <p style="font-size:0.7em; margin:5px 0 0 0;">HĐND | UBND | TAND | VKSND</p>
+                </div>
+
+                <p class="fragment fade-up" style="font-style: italic; font-size: 0.9em; max-width: 80%; margin: 0 auto; line-height:1.6;">
+                    "Mỗi cơ quan có chức năng, nhiệm vụ và thẩm quyền riêng, cùng phối hợp thực hiện hoạt động quản lý nhà nước và bảo đảm quyền, lợi ích hợp pháp của Nhà nước, tổ chức và cá nhân."
+                </p>
+
+                <hr style="width: 30%; border-color: var(--red-accent); margin: 30px auto;">
+                
+                <h3 class="gold-text fragment fade-in" style="font-size: 1.2em; text-transform: none;">XIN CẢM ƠN THẦY CÔ VÀ CÁC BẠN ĐÃ LẮNG NGHE!</h3>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Tùy chỉnh số trang Slide -->
+    <div class="slide-number-custom" id="slide-counter"></div>
+
+    <!-- Reveal.js Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: true,
+            hash: true,
+            transition: 'slide', // Hiệu ứng mặc định
+            backgroundTransition: 'fade',
+            width: 1280,
+            height: 720,
+            margin: 0.1,
+            minScale: 0.2,
+            maxScale: 2.0
+        });
+
+        // Hiển thị số slide custom
+        Reveal.on('slidechanged', event => {
+            document.getElementById('slide-counter').innerText = 
+                (event.indexh + 1) + " / " + Reveal.getTotalSlides();
+        });
+        // Khởi tạo lần đầu
+        document.getElementById('slide-counter').innerText = "1 / 25";
+    </script>
+</body>
+</html>

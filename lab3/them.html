@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> FORM DU LIEU</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .login-form {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            width: 380px;
+            padding: 20px 25px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        .login-form h2 {
+            font-family: "Times New Roman", Times, serif;
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: normal;
+            font-size: 26px;
+        }
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .form-group label {
+            width: 140px;
+            color: #333;
+            font-size: 14px;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="password"],
+        .form-group select {
+            flex: 1;
+            padding: 4px 6px;
+            border: 1px solid #a9a9a9;
+            box-sizing: border-box;
+            font-size: 13px;
+        }
+        .section-group {
+            display: flex;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .section-group .section-label {
+            width: 140px;
+            color: #333;
+            font-size: 14px;
+        }
+        .section-group .options {
+            flex: 1;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+            color: #333;
+            cursor: pointer;
+        }
+        .options input[type="radio"],
+        .options input[type="checkbox"] {
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .buttons input[type="submit"],
+        .buttons input[type="reset"] {
+            padding: 3px 12px;
+            margin: 0 4px;
+            background-color: #e1e1e1;
+            border: 1px solid #707070;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        .buttons input[type="submit"]:hover,
+        .buttons input[type="reset"]:hover {
+            background-color: #d0d0d0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-form">
+        <h2> FORM DU LIEU</h2>
+        <form>
+            <!-- Username -->
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username">
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+            </div>
+
+            <!-- City of Employment -->
+            <div class="form-group">
+                <label for="city">City of Employment:</label>
+                <input type="text" id="city" name="city">
+            </div>
+
+            <!-- Web server -->
+            <div class="form-group">
+                <label for="server">Web server:</label>
+                <select id="server" name="server">
+                    <option value="" selected>&mdash; Choose a server &mdash;</option>
+                    <option value="server1">Server 1</option>
+                    <option value="server2">Server 2</option>
+                </select>
+            </div>
+
+            <!-- Please specify your role -->
+            <div class="section-group">
+                <div class="section-label">Please specify<br>your role:</div>
+                <div class="options">
+                    <label><input type="radio" name="role" value="admin"> Admin</label>
+                    <label><input type="radio" name="role" value="engineer"> Engineer</label>
+                    <label><input type="radio" name="role" value="manager"> Manager</label>
+                    <label><input type="radio" name="role" value="guest"> Guest</label>
+                </div>
+            </div>
+
+            <!-- Single Sign-on to the following -->
+            <div class="section-group">
+                <div class="section-label">Single Sign-on<br>to the following:</div>
+                <div class="options">
+                    <label><input type="checkbox" name="sso" value="mail"> Mail</label>
+                    <label><input type="checkbox" name="sso" value="payroll"> Payroll</label>
+                    <label><input type="checkbox" name="sso" value="self-service"> Self-service</label>
+                </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="buttons">
+                <input type="submit" value="Login">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
