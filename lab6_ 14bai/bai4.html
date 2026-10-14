@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Bài 4 - Máy tính tình yêu</title>
+</head>
+<body>
+  <h2>Bài 4. Máy tính tình yêu</h2>
+  <input type="text" id="ten1" placeholder="Tên của bạn"><br><br>
+  <input type="text" id="ten2" placeholder="Tên người ấy"><br><br>
+  <button onclick="tinhTinhYeu()">Tính</button>
+  <p id="ketqua"></p>
+
+  <script>
+    function tinhTinhYeu() {
+      var ten1 = document.getElementById("ten1").value;
+      var ten2 = document.getElementById("ten2").value;
+      var kq = document.getElementById("ketqua");
+
+      // Số ngẫu nhiên từ 1 đến 100
+      var tyLe = Math.floor(Math.random() * 100) + 1;
+
+      var loiNhan = "";
+      if (tyLe >= 80) {
+        loiNhan = "Trời sinh một cặp!";
+      } else if (tyLe >= 50) {
+        loiNhan = "Khá hợp nhau!";
+      } else if (tyLe >= 30) {
+        loiNhan = "Cần cố gắng thêm!";
+      } else {
+        loiNhan = "Có vẻ không hợp lắm...";
+      }
+
+      kq.innerText = ten1 + " và " + ten2 + " hợp nhau " + tyLe + "% - " + loiNhan;
+    }
+  </script>
+</body>
+</html>

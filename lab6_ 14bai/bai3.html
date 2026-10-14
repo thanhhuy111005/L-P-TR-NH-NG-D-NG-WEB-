@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Bài 3 - Xếp loại học lực</title>
+</head>
+<body>
+  <h2>Bài 3. Xếp loại học lực</h2>
+  <input type="number" id="diem" placeholder="Nhập điểm (0-100)">
+  <button onclick="xepLoai()">Xếp loại</button>
+  <p id="ketqua"></p>
+
+  <script>
+    function xepLoai() {
+      var diem = Number(document.getElementById("diem").value);
+      var kq = document.getElementById("ketqua");
+
+      if (diem < 0 || diem > 100) {
+        kq.innerText = "Điểm phải từ 0 đến 100";
+      } else if (diem >= 90) {
+        kq.innerText = "Loại A";
+      } else if (diem >= 80) {
+        kq.innerText = "Loại B";
+      } else if (diem >= 70) {
+        kq.innerText = "Loại C";
+      } else if (diem >= 60) {
+        kq.innerText = "Loại D";
+      } else {
+        kq.innerText = "Loại F";
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Bài 5 - Đoán số may mắn</title>
+</head>
+<body>
+  <h2>Bài 5. Đoán số may mắn</h2>
+  <input type="number" id="so" placeholder="Nhập số từ 1 đến 10">
+  <button onclick="doan()">Đoán</button>
+  <p id="ketqua"></p>
+
+  <script>
+    function doan() {
+      var so = Number(document.getElementById("so").value);
+      var may = Math.floor(Math.random() * 10) + 1;
+      var kq = document.getElementById("ketqua");
+
+      if (so === may) {
+        kq.innerText = "Máy chọn " + may + ". Bạn thắng!";
+      } else {
+        kq.innerText = "Máy chọn " + may + ". Chưa may mắn!";
+      }
+    }
+  </script>
+</body>
+</html>

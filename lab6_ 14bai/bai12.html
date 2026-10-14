@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Bài 12 - Năm nhuận</title>
+</head>
+<body>
+  <h2>Bài 12. Kiểm tra năm nhuận</h2>
+  <input type="number" id="nam" placeholder="Nhập một năm">
+  <button onclick="kiemTra()">Kiểm tra</button>
+  <p id="ketqua"></p>
+
+  <script>
+    function kiemTra() {
+      var nam = Number(document.getElementById("nam").value);
+      var kq = document.getElementById("ketqua");
+
+      // Năm nhuận: chia hết cho 400, hoặc chia hết cho 4 nhưng không chia hết cho 100
+      if ((nam % 4 === 0 && nam % 100 !== 0) || nam % 400 === 0) {
+        kq.innerText = "Năm " + nam + " là năm nhuận";
+      } else {
+        kq.innerText = "Năm " + nam + " không phải năm nhuận";
+      }
+    }
+  </script>
+</body>
+</html>

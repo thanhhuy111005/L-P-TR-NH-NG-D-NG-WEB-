@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Bài 7 - Xúc xắc may mắn</title>
+</head>
+<body>
+  <h2>Bài 7. Xúc xắc may mắn</h2>
+  <button onclick="lac()">Lắc xúc xắc</button>
+  <p id="ketqua"></p>
+
+  <script>
+    function lac() {
+      var so = Math.floor(Math.random() * 6) + 1;
+      document.getElementById("ketqua").innerText = "Kết quả: " + so;
+    }
+  </script>
+</body>
+</html>

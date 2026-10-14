@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Bài 2 - Tính tuổi</title>
+</head>
+<body>
+  <h2>Bài 2. Tính tuổi</h2>
+  <input type="number" id="namSinh" placeholder="Nhập năm sinh">
+  <button onclick="tinhTuoi()">Tính tuổi</button>
+  <p id="ketqua"></p>
+
+  <script>
+    function tinhTuoi() {
+      var namSinh = Number(document.getElementById("namSinh").value);
+      var namNay = new Date().getFullYear();
+      var tuoi = namNay - namSinh;
+
+      document.getElementById("ketqua").innerText = "Bạn " + tuoi + " tuổi";
+    }
+  </script>
+</body>
+</html>
