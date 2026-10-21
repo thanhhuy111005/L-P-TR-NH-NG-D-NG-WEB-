@@ -1,0 +1,178 @@
+/* ===== Cài đặt chung ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #ffffff;
+}
+
+h2 {
+    text-align: center;
+    color: #1f2a44;
+    margin-bottom: 24px;
+    font-size: 28px;
+}
+
+/* ===== PHẦN 1: Header + Nav ===== */
+header {
+    background-color: #1f2a44;
+    color: #ffffff;
+    text-align: center;
+    padding: 24px 20px 0;
+}
+
+header h1 {
+    font-size: 38px;
+    letter-spacing: 2px;
+}
+
+header p {
+    margin-top: 4px;
+    font-style: italic;
+    color: #d6dcea;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 18px;
+}
+
+nav a {
+    display: block;
+    padding: 12px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 3px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+nav a:hover {
+    color: #ff6b35;
+    border-bottom-color: #ff6b35;
+}
+
+/* ===== PHẦN 2: Banner + Giới thiệu ===== */
+.banner {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.about-content p {
+    margin-bottom: 14px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 30px;
+    background-color: #ff6b35;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #1f2a44;
+}
+
+/* ===== PHẦN 3: Sản phẩm ===== */
+#products {
+    padding: 40px 20px 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+}
+
+.card {
+    width: 240px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 18px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 14px 0 6px;
+    color: #1f2a44;
+}
+
+.price {
+    color: #ff6b35;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+/* ===== PHẦN 4: Liên hệ + Footer ===== */
+#contact {
+    background-color: #fff1ea;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#contact p {
+    margin-bottom: 8px;
+}
+
+footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ===== Responsive nhỏ ===== */
+@media (max-width: 600px) {
+    nav ul {
+        gap: 8px;
+    }
+    nav a {
+        padding: 10px 12px;
+    }
+}

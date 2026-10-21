@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff8a5c"/>
+      <stop offset="1" stop-color="#ff6b35"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="400" fill="url(#bg)"/>
+  <circle cx="1350" cy="60" r="220" fill="#ffffff" opacity="0.12"/>
+  <circle cx="200" cy="380" r="180" fill="#1f2a44" opacity="0.15"/>
+  <g transform="translate(520 90) scale(1.6)">
+    <path d="M20 150 L20 90 Q20 70 45 68 L120 60 Q150 40 190 70 L235 90 Q270 100 270 130 L270 150 Z" fill="#ffffff"/>
+    <path d="M20 150 L270 150 L270 172 Q270 180 260 180 L30 180 Q20 180 20 172 Z" fill="#1f2a44"/>
+    <path d="M120 60 Q150 40 190 70 L170 88 Q145 70 120 82 Z" fill="#1f2a44"/>
+    <circle cx="150" cy="110" r="5" fill="#ff6b35"/>
+    <circle cx="170" cy="118" r="5" fill="#ff6b35"/>
+    <circle cx="190" cy="126" r="5" fill="#ff6b35"/>
+  </g>
+  <text x="80" y="210" font-family="Arial, sans-serif" font-size="64" font-weight="700" fill="#ffffff">STEP INTO</text>
+  <text x="80" y="275" font-family="Arial, sans-serif" font-size="64" font-weight="700" fill="#1f2a44">NEW STYLE</text>
+</svg>
