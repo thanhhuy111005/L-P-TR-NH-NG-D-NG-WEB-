@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 15: removeDuplicates</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Bài 15: removeDuplicates</h1>
+  <p>Trả về mảng mới không có phần tử trùng lặp, giữ nguyên thứ tự xuất hiện đầu tiên.</p>
+  <pre id="output"></pre>
+  <a class="back" href="index.html">&larr; Danh sách bài</a>
+
+  <script src="print.js"></script>
+  <script>
+    function removeDuplicates(arr) {
+      var result = [];
+      for (var i = 0; i < arr.length; i++) {
+        if (result.indexOf(arr[i]) === -1) {
+          result.push(arr[i]);
+        }
+      }
+      return result;
+    }
+
+    print(removeDuplicates([1, 2, 2, 3, 4, 4, 5])); // [1,2,3,4,5]
+  </script>
+</body>
+</html>

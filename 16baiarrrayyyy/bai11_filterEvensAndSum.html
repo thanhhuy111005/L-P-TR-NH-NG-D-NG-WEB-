@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 11: filterEvensAndSum</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Bài 11: filterEvensAndSum</h1>
+  <p>Lọc ra các số chẵn từ mảng rồi tính tổng của chúng.</p>
+  <pre id="output"></pre>
+  <a class="back" href="index.html">&larr; Danh sách bài</a>
+
+  <script src="print.js"></script>
+  <script>
+    function filterEvensAndSum(arr) {
+      var evens = [];
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+          evens.push(arr[i]);
+        }
+      }
+
+      var sum = 0;
+      for (var j = 0; j < evens.length; j++) {
+        sum += evens[j];
+      }
+      return sum;
+    }
+
+    print(filterEvensAndSum([1, 2, 3, 4, 5, 6]));            // 12
+    print(filterEvensAndSum([12, 14, 15, 19, 20, 100]));     // 146
+  </script>
+</body>
+</html>

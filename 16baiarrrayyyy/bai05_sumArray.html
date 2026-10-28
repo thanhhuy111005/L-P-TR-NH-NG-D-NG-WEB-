@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 5: sumArray</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Bài 5: sumArray</h1>
+  <p>Trả về tổng của tất cả các số trong mảng.</p>
+  <pre id="output"></pre>
+  <a class="back" href="index.html">&larr; Danh sách bài</a>
+
+  <script src="print.js"></script>
+  <script>
+    function sumArray(arr) {
+      var sum = 0;
+      for (var i = 0; i < arr.length; i++) {
+        sum += arr[i];
+      }
+      return sum;
+    }
+
+    print(sumArray([1, 2, 3, 4, 5])); // 15
+  </script>
+</body>
+</html>

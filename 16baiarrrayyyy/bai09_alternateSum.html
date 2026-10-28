@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 9: alternateSum</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Bài 9: alternateSum</h1>
+  <p>Tổng xen kẽ: cộng số ở vị trí chẵn, trừ số ở vị trí lẻ (vị trí đếm từ 0).</p>
+  <pre id="output"></pre>
+  <a class="back" href="index.html">&larr; Danh sách bài</a>
+
+  <script src="print.js"></script>
+  <script>
+    function alternateSum(arr) {
+      var sum = 0;
+      for (var i = 0; i < arr.length; i++) {
+        if (i % 2 === 0) {
+          sum += arr[i];
+        } else {
+          sum -= arr[i];
+        }
+      }
+      return sum;
+    }
+
+    print(alternateSum([10, 5, 6, 3]));    // 8  (10 - 5 + 6 - 3)
+    print(alternateSum([1, 2, 3, 4, 5]));  // 3  (1 - 2 + 3 - 4 + 5)
+  </script>
+</body>
+</html>

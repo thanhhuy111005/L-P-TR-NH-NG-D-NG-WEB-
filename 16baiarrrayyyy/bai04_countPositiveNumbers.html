@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 4: countPositiveNumbers</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Bài 4: countPositiveNumbers</h1>
+  <p>Trả về số lượng số dương trong mảng.</p>
+  <pre id="output"></pre>
+  <a class="back" href="index.html">&larr; Danh sách bài</a>
+
+  <script src="print.js"></script>
+  <script>
+    function countPositiveNumbers(arr) {
+      var count = 0;
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i] > 0) {
+          count++;
+        }
+      }
+      return count;
+    }
+
+    print(countPositiveNumbers([-1, 2, 3, -4, 5])); // 3
+  </script>
+</body>
+</html>

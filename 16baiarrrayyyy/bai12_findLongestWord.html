@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 12: findLongestWord</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Bài 12: findLongestWord</h1>
+  <p>Trả về chuỗi dài nhất trong mảng. Nếu có nhiều chuỗi cùng độ dài lớn nhất, trả về chuỗi xuất hiện đầu tiên.</p>
+  <pre id="output"></pre>
+  <a class="back" href="index.html">&larr; Danh sách bài</a>
+
+  <script src="print.js"></script>
+  <script>
+    function findLongestWord(words) {
+      if (words.length === 0) return "";
+
+      var longest = words[0];
+      for (var i = 1; i < words.length; i++) {
+        // Dùng ">" (không phải ">=") để giữ chuỗi xuất hiện đầu tiên
+        if (words[i].length > longest.length) {
+          longest = words[i];
+        }
+      }
+      return longest;
+    }
+
+    print(findLongestWord(["apple", "banana", "cherry", "date"]));      // banana
+    print(findLongestWord(["hello", "world", "this", "is", "great"]));  // hello
+  </script>
+</body>
+</html>

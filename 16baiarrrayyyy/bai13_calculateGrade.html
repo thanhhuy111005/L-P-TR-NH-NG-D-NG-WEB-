@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 13: calculateGrade</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Bài 13: calculateGrade</h1>
+  <p>Tính điểm trung bình và trả về xếp loại: A (từ 90), B (80 đến dưới 90), C (70 đến dưới 80), D (60 đến dưới 70), F (dưới 60).</p>
+  <pre id="output"></pre>
+  <a class="back" href="index.html">&larr; Danh sách bài</a>
+
+  <script src="print.js"></script>
+  <script>
+    function calculateGrade(scores) {
+      if (scores.length === 0) return "F";
+
+      var sum = 0;
+      for (var i = 0; i < scores.length; i++) {
+        sum += scores[i];
+      }
+      var average = sum / scores.length;
+
+      if (average >= 90) {
+        return "A";
+      } else if (average >= 80) {
+        return "B";
+      } else if (average >= 70) {
+        return "C";
+      } else if (average >= 60) {
+        return "D";
+      } else {
+        return "F";
+      }
+    }
+
+    print(calculateGrade([95, 92, 98])); // A
+    print(calculateGrade([85, 80, 90])); // B
+    print(calculateGrade([70, 75, 78])); // C
+    print(calculateGrade([60, 65, 68])); // D
+    print(calculateGrade([40, 50, 55])); // F
+  </script>
+</body>
+</html>

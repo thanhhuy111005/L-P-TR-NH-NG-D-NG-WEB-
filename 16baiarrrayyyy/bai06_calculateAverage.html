@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 6: calculateAverage</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Bài 6: calculateAverage</h1>
+  <p>Trả về trung bình cộng của các số trong mảng, trả về 0 nếu mảng trống.</p>
+  <pre id="output"></pre>
+  <a class="back" href="index.html">&larr; Danh sách bài</a>
+
+  <script src="print.js"></script>
+  <script>
+    function calculateAverage(arr) {
+      if (arr.length === 0) return 0;
+
+      var sum = 0;
+      for (var i = 0; i < arr.length; i++) {
+        sum += arr[i];
+      }
+      return sum / arr.length;
+    }
+
+    print(calculateAverage([10, 20, 30, 40, 50])); // 30
+    print(calculateAverage([]));                   // 0
+  </script>
+</body>
+</html>

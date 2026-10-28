@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 3: findMin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Bài 3: findMin</h1>
+  <p>Trả về số nhỏ nhất trong mảng (dùng vòng lặp for). Mảng rỗng trả về null.</p>
+  <pre id="output"></pre>
+  <a class="back" href="index.html">&larr; Danh sách bài</a>
+
+  <script src="print.js"></script>
+  <script>
+    function findMin(arr) {
+      if (arr.length === 0) return null;
+
+      var min = arr[0];
+      for (var i = 1; i < arr.length; i++) {
+        if (arr[i] < min) {
+          min = arr[i];
+        }
+      }
+      return min;
+    }
+
+    print(findMin([5, 2, 8, 1, 4])); // 1
+  </script>
+</body>
+</html>
