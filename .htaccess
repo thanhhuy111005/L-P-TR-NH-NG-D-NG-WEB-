@@ -1,0 +1,10 @@
+Options -Indexes
+<FilesMatch "\.(sql|md)$">
+    # Tránh lộ file nội bộ khi đưa lên hosting (đổi nếu cần xem file)
+    Require all denied
+</FilesMatch>
+<IfModule mod_headers.c>
+    <FilesMatch "\.(css|js|svg)$">
+        Header set Cache-Control "public, max-age=86400"
+    </FilesMatch>
+</IfModule>

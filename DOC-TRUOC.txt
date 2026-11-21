@@ -1,0 +1,10 @@
+EXPLORE VIETNAM - SẢN PHẨM ĐẦY ĐỦ
+
+1) PHP_explore_vietnam/  : website đầy đủ (PHP 8 + MySQL), có trang quản trị, bong bóng chat hỏi đáp, bản đồ Google Maps.
+   - Chạy: chép thư mục vào C:\xampp\htdocs, import database/explore_vietnam.sql bằng phpMyAdmin,
+     mở http://localhost/PHP_explore_vietnam/ (đổi tên thư mục thành explore_vietnam nếu muốn).
+   - Admin: /admin/login.php  (admin / Admin@123, hãy đổi mật khẩu)
+   - Xem README.md bên trong để biết chi tiết.
+2) HTML_tinh/            : bản HTML thuần (không cần PHP/MySQL), mở index.html bằng trình duyệt.
+   - Chỉ để xem/nộp theo tiêu chí HTML. Tìm kiếm, gửi form, chat và admin chỉ chạy trên bản PHP.
+   - Bản đồ Google Maps cần có Internet.
